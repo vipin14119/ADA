@@ -2,6 +2,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+/*
+* Author : Vipin Chaudhary
+*/
+
 typedef struct node // node of tree
 {
 	int element;  // data of node 
