@@ -154,23 +154,49 @@ node* deleteNode(node* root, int key)
     return root;
 }
 
+int numOFNodes(node* root)  // Function to calculate the number of nodes in the tree
+{
+	if(root==NULL)  // If node is NULL then return 0
+	{
+		return 0;
+	}
+	else  // if its not null then return 1+ number of nodes of its both left and right sub trees
+	{
+		return 1+numOFNodes(root->left)+numOFNodes(root->right);
+	}
+}
+
+int numOFLeaves(node* root)  // Function to calculate the number of leaves in a tree
+{
+	if(root==NULL)  // if node is null ther return 0
+	{
+		return 0;
+	}
+	else if (root!=NULL && root->left==NULL && root->right==NULL)  // If it is leaf then return 1
+	{
+		return 1;
+	}
+	else  // else add the leaves in the left and right subtree
+	{
+		return numOFLeaves(root->left)+numOFLeaves(root->right);
+	}
+}
+
+
 int main(int argc, char const *argv[])
 {
 	
 	node* root=NULL;
 	int i,d;
-	for(i=0;i<6;i++)
+	for(i=0;i<8;i++)
 	{
 		scanf("%d",&d);
 		root=addnode(root,d);
 	}
 	printT(root);
-	printf("\nEnter\n");
-	scanf("%d",&d);
-	deleteNode(root,d);
-	//search(root,d);
 	
-	//ndMin(root);
-	//findMax(root);
+	printf("Number of nodes in tree is %d\n",numOFNodes(root));
+	printf("Number of leaves in tree is %d\n",numOFLeaves(root));
+	printf("Number of full nodes in tree is %d\n",numOfFullnodes(root));
 	return 0;
 }

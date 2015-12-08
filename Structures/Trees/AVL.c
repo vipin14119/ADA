@@ -22,7 +22,7 @@ node* create(int d)  // function to create new node
 	return newnode;
 }
 
-int height(node* root)  // function to find height of node
+int height(node* root)  // function to find height of node   
 {
 	if(root==NULL)
 		return -1;
