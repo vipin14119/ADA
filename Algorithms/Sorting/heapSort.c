@@ -16,6 +16,18 @@ void swap(int i,int j)
 	Heap[j]=temp;
 }
 
+int min(i,j)  // function to find which index has a lesser data in the Heap
+{
+	if(Heap[i]>Heap[j])
+	{
+		return j;
+	}
+	else
+	{
+		return i;
+	}
+}
+
 void percolateUp(int last)  // // Function to fit a value to its correct position dragging from bottom to Top
 {
 	int i=last;
@@ -31,6 +43,40 @@ void percolateUp(int last)  // // Function to fit a value to its correct positio
 			return;
 		}
 
+	}
+}
+
+
+void percolateDown(int i)  // Function to fit a value to its correct position dragging from top to bottom
+{
+	if(i==last)  // if this index is the last position in heap then no swapping needed
+	{
+		return ;
+	}
+	else if(2*i==last)  // If this index has only one child i.e left child 
+	{
+		if(Heap[2*i]<Heap[i])  // and if data in child is lesser than its own data then swap
+		{
+			swap(i,2*i);
+			percolateDown(2*i);  // still find its correct position
+		}
+		else
+		{
+			return ;
+		}
+	}
+	else if(2*i+1<=last)  // If Heap have enogh childs and enough positions
+	{
+		int m=min(2*i,2*i+1);  // first check which child in smallest 
+		if(Heap[m]<Heap[i])  // then check the eqaulity of smallest child data with its own data ,then swap
+		{
+			swap(i,m);
+			percolateDown(m);
+		}
+		else
+		{
+			return ;
+		}
 	}
 }
 
