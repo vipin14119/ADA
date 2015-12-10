@@ -1,9 +1,10 @@
 // A heap is like a binary tree and it is left justified
+
 #include <stdio.h>
 #include <stdlib.h>
 
 /*
-* Auhor : Vipin Chaudhary
+* Author : Vipin Chaudhary
 */
 
 int Heap[100]; // assume a size of 100 for the heap(Min Heap)
