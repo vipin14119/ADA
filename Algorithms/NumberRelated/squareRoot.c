@@ -13,7 +13,7 @@ long long int rootlogn(long long int n)  // Divide conquer to compute square roo
 	}
 	else
 	{
-		long long int s=1;long long int e=n,ans=0;
+		long long int s=1;long long int e=n/2,ans=0;  // start from 1 to n/2 and pick its mid and check the value of its square and adjust limits just like binary search algo
 		while(s<=e)
 		{
 			long long int mid=(s+e)/2;
@@ -36,5 +36,5 @@ long long int rootlogn(long long int n)  // Divide conquer to compute square roo
 }
 long long int main()
 {
-	printf("%lld\n",rootlogn(5));
+	printf("%lld\n",rootlogn(81));
 }
