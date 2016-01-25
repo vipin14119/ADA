@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 #define INT_MAX 2147483647
+/*
+* Author : Vipin Chaudhary
+*/
 typedef struct node
 {
 	int x;
